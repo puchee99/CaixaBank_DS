@@ -19,8 +19,8 @@ CaixaBank hackathon 2022 Data Science.
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/puchee99/JOBcn-DS-2022">
-    <img src="images/pytorch.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/puchee99/CaixaBank_DS">
+    <img src="images/caixabank.jpeg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">JCaixaBank-DS-2022</h3>
@@ -28,14 +28,14 @@ CaixaBank hackathon 2022 Data Science.
   <p align="center">
     Online Data Science hackathon  (CaixaBank 2022)
     <br />
-    <a href="https://github.com/puchee99/JOBcn-DS-2022"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/puchee99/CaixaBank_DS"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/puchee99/JOBcn-DS-2022">View Demo</a>
+    <a href="https://github.com/puchee99/CaixaBank_DS">View Demo</a>
     ·
-    <a href="https://github.com/puchee99/JOBcn-DS-2022/issues">Report Bug</a>
+    <a href="https://github.com/puchee99/CaixaBank_DS/issues">Report Bug</a>
     ·
-    <a href="https://github.com/puchee99/JOBcn-DS-2022/issues">Request Feature</a>
+    <a href="https://github.com/puchee99/CaixaBank_DS/issues">Request Feature</a>
   </p>
 </div>
 
@@ -69,8 +69,7 @@ CaixaBank hackathon 2022 Data Science.
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The objective of this project is to classify insects according to the value of different sensors.
-We have the data in a `.csv` where the `Insect` column is the target to predict.
+The objective of this project is to 
 
 
 
@@ -89,22 +88,7 @@ We have the data in a `.csv` where the `Insect` column is the target to predict.
 
 ## EDA
 
-Firstly, we will take the columns with a correlation greater than 0.05.
 
-![correlation_features]
-
-The distributions of the important columns are:
-
-![features]
-
-Distributions isolating each type of insect:
-
-![dist-classes]
-
-Finally, before training the model, we added new data from insect 2 to level the number of samples. We do not level them completely because we want to maintain consistency with the actual data. 
-
-![n-classes]
-[number of insects in train.csv data][n-classes]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -112,25 +96,6 @@ Finally, before training the model, we added new data from insect 2 to level the
 
 Composition of our model:
 
-    MulticlassSimpleClassification(
-
-        (layer1): Linear(in_features=5, out_features=512, bias=True)
-              
-        ReLU(layer1)
-        
-        (layer2): Linear(in_features=512, out_features=128, bias=True)
-        
-        Sigmoid(layer2)
-        
-        (layer3): Linear(in_features=128, out_features=64, bias=True)
-        
-        Sigmoid(layer3)
-        
-        (out): Linear(in_features=64, out_features=3, bias=True)
-        
-        Softmax(out)
-
-    )
 
 ##### Criterion: [Cross Entropy][cross-entropy-link]
 
@@ -174,11 +139,11 @@ The predictions from the `test_x.csv` file can be found in the `output/results` 
 
 First, clone the repository:
    ```sh
-   git clone https://github.com/puchee99/JOBcn-DS-2022.git
+   git clone https://github.com/puchee99/CaixaBank_DS.git
    ```
 Access to the project folder with:
   ```sh
-  cd JOBcn-DS-2022
+  cd CaixaBank_DS
   ```
 
 We will create a virtual environment with `python3`
@@ -224,7 +189,7 @@ The `train.py` and `test.py` documents can be executed with bash using different
 
 Arnau Puche  - [@arnau_puche_vila](https://www.linkedin.com/in/arnau-puche-vila-ds/) - arnaupuchevila@gmail.com
 
-Project Link: [https://github.com/puchee99/JOBcn-DS-2022](https://github.com/puchee99/JOBcn-DS)
+Project Link: [https://github.com/puchee99/CaixaBank_DS](https://github.com/puchee99/CaixaBank_DS)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -233,16 +198,16 @@ Project Link: [https://github.com/puchee99/JOBcn-DS-2022](https://github.com/puc
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
-[contributors-url]: https://github.com/puchee99/JOBcn-DS-2022/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
-[forks-url]: https://github.com/puchee99/JOBcn-DS-2022/network/members
-[stars-shield]: https://img.shields.io/github/stars/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
-[stars-url]: https://github.com/puchee99/JOBcn-DS-2022/stargazers
-[issues-shield]: https://img.shields.io/github/issues/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
-[issues-url]: https://github.com/puchee99/JOBcn-DS-2022/issues
-[license-shield]: https://img.shields.io/github/license/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
-[license-url]: https://github.com/puchee99/JOBcn-DS-2022/blob/main/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/puchee99/CaixaBank_DS.svg?style=for-the-badge
+[contributors-url]: https://github.com/puchee99/CaixaBank_DS/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/puchee99/CaixaBank_DS.svg?style=for-the-badge
+[forks-url]: https://github.com/puchee99/CaixaBank_DS/network/members
+[stars-shield]: https://img.shields.io/github/stars/puchee99/CaixaBank_DS.svg?style=for-the-badge
+[stars-url]: https://github.com/puchee99/CaixaBank_DS/stargazers
+[issues-shield]: https://img.shields.io/github/issues/puchee99/CaixaBank_DS.svg?style=for-the-badge
+[issues-url]: https://github.com/puchee99/CaixaBank_DS/issues
+[license-shield]: https://img.shields.io/github/license/puchee99/CaixaBank_DS.svg?style=for-the-badge
+[license-url]: https://github.com/puchee99/CaixaBank_DS/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/arnau-puche-vila-ds/
 [product-screenshot]: output/plots/features_distribution.png
