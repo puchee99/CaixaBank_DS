@@ -1,6 +1,3 @@
-# CaixaBank_DS
-CaixaBank hackathon 2022 Data Science.
-
 <div id="top"></div>
 
 <!-- PROJECT SHIELDS -->
