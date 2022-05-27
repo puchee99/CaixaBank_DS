@@ -1,14 +1,5 @@
-import sys
-import os 
-import inspect
 from datetime import datetime, timedelta
-
-
-currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parentdir = os.path.dirname(currentdir)
-sys.path.insert(0, parentdir) 
-
-#from scraper.utils import *
+import os 
 
 import pandas as pd
 import numpy as np 
@@ -25,7 +16,6 @@ def save_df_local(df: pd.DataFrame, output_name: str='results.csv', create_folde
     else:
         df.to_csv(output_name,index=True) 
     return
-
 
 def classificator(row, location):
     if row[location] >= 1.25:

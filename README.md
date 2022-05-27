@@ -128,8 +128,8 @@ We will create a virtual environment with `python3`
 
 ## Usage
 
-The main.ipynb document contains all the steps to get to the solution.
-This uses functions from the personal utils library.
+The `main.ipynb` document contains all the steps to get to the solution.
+This uses functions from the personal `utils` library.
 
 The `train.py` and `test.py` documents can be executed with bash using different arguments.
 
