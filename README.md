@@ -23,7 +23,7 @@ CaixaBank hackathon 2022 Data Science.
     <img src="images/caixabank.jpeg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">JCaixaBank-DS-2022</h3>
+  <h3 align="center">CaixaBank-DS-2022</h3>
 
   <p align="center">
     Online Data Science hackathon  (CaixaBank 2022)
@@ -69,7 +69,7 @@ CaixaBank hackathon 2022 Data Science.
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The objective of this project is to 
+The challenge will consist of modeling a predictive algorithm that allows knowing the future dynamics of the market from the historical data of the value of the IBEX35 and some Tweets.
 
 
 
@@ -92,43 +92,9 @@ The objective of this project is to
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Model
-
-Composition of our model:
-
-
-##### Criterion: [Cross Entropy][cross-entropy-link]
-
-<!-- ![criterion] -->
-
-
-##### Optimizer: [Adam][adam-link]
-
-<!-- ![optimizer] -->
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Results
 
-In the best training we have an accuracy of 0.923 predicting test set(20% of data from `train.csv`).
 
-The predictions from the `test_x.csv` file can be found in the `output/results` folder in the `results.csv` file.
-
-#### ACCURACY:
-![accuracy]
-
-#### CONFUSION MATRIX:
-![CM]
-
-#### LOSS:
-![loss]
-
-#### ROC:
-![roc]
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- GETTING STARTED -->
@@ -210,16 +176,3 @@ Project Link: [https://github.com/puchee99/CaixaBank_DS](https://github.com/puch
 [license-url]: https://github.com/puchee99/CaixaBank_DS/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/arnau-puche-vila-ds/
-[product-screenshot]: output/plots/features_distribution.png
-[features]: output/plots/features_distribution.png
-[n-classes]: output/plots/n_classes.png
-[dist-classes]: output/plots/dist_classes.png
-[correlation_features]: output/plots/correlation_features.png
-[accuracy]: output/plots/MulticlassSimpleClassification_accuracy.png
-[CM]: output/plots/MulticlassSimpleClassification_cm.png
-[loss]: output/plots/MulticlassSimpleClassification_loss.png
-[roc]: output/plots/MulticlassSimpleClassification_roc.png
-[criterion]: images/CrossEntropy.png
-[optimizer]: images/Adam.png
-[adam-link]: https://pytorch.org/docs/stable/generated/torch.optim.Adam.html#torch.optim.Adam
-[cross-entropy-link]: https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html
