@@ -78,7 +78,6 @@ The challenge will consist of modeling a predictive algorithm that allows knowin
 * [scikit-learn](https://scikit-learn.org/)
 * [Numpy](https://numpy.org/)
 * [Pandas](https://pandas.pydata.org/)
-* [Logging](https://docs.python.org/3/library/logging.html)
 * [Seaborn](https://seaborn.pydata.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -128,6 +127,10 @@ We will create a virtual environment with `python3`
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Usage
+
+The main.ipynb document contains all the steps to get to the solution.
+This uses functions from the personal utils library.
+
 The `train.py` and `test.py` documents can be executed with bash using different arguments.
 
 * To get the information of the arguments use:
