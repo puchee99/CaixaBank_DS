@@ -10,8 +10,22 @@ import re
 def my_replace(input):
     return input.group()[1:]
 
-def clean_tweet(row, location):
-    tweet = row[location]
+def sentiment_vader_v(text):
+    sentence = ''
+    translator= Translator(from_lang="spanish",to_lang="english")
+    try:
+        sentence = translator.translate(text)
+    except: 
+        print(f'Invalid translation: {text}')
+        return 0
+
+    # Create a SentimentIntensityAnalyzer object.
+    sid_obj = SentimentIntensityAnalyzer()
+
+    sentiment_dict = sid_obj.polarity_scores(sentence)
+    return sentiment_dict['compound'] #neg, neu, pos
+
+def clean_tweet_v(tweet):
     if type(tweet) == float:#np.float:
         return ""
     temp = tweet.lower()
@@ -26,6 +40,7 @@ def clean_tweet(row, location):
 
 def sentiment_vader(row, location):
     text = row[location]
+    print(text)
     translator= Translator(from_lang="spanish",to_lang="english")
     try:
         sentence = translator.translate(text)
@@ -37,6 +52,7 @@ def sentiment_vader(row, location):
     sid_obj = SentimentIntensityAnalyzer()
 
     sentiment_dict = sid_obj.polarity_scores(sentence)
+    print('sesent',sentiment_dict['compound'])
     return sentiment_dict['compound'] #neg, neu, pos
 
 def apply_vader(df, name_col = 0):
