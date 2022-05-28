@@ -1,6 +1,8 @@
 from datetime import datetime, timedelta
 import os 
-
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+import seaborn as sns
 import pandas as pd
 import numpy as np 
 
@@ -52,3 +54,21 @@ def df_add_improve_cols(df):
 
 def parser(s):
     return datetime.strptime(s, '%Y-%m-%d')
+
+def plot_features(df):
+    #substituting unscaled feature values by scaled values using sklearn StandardScaler
+    scaler = StandardScaler()
+    df.iloc[:,:] = scaler.fit_transform(df.iloc[:,:])
+
+    #drawing figure with title and single axis. Size and resolution are specified
+    plt.figure(figsize=(18,6),dpi=600);
+    plt.title('Comparison of scaled features',fontsize=22);
+
+    #setting y axis label
+    plt.ylabel('Scaled values');
+
+    #rotating x axis ticks by 90 degrees
+    plt.xticks(rotation=90);
+
+    #drawing boxplot of scaled feature values
+    sns.boxplot(data=df);

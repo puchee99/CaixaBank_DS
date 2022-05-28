@@ -1,31 +1,32 @@
 
-
 import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from translate import Translator
-
+from dateutil.parser import parse
+from googletrans import Translator, constants
+from sklearn.preprocessing import StandardScaler
 import numpy as np
 import re
+
+from utils import *
+
+def change_data(row, location):
+    try:
+        return parse(row[location]).strftime("%Y-%m-%d")
+    except:
+        return '0'
 
 def my_replace(input):
     return input.group()[1:]
 
-def sentiment_vader_v(text):
+def sentiment_vader(text):
     sentence = ''
-    translator= Translator(from_lang="spanish",to_lang="english")
-    try:
-        sentence = translator.translate(text)
-    except: 
-        print(f'Invalid translation: {text}')
-        return 0
-
-    # Create a SentimentIntensityAnalyzer object.
+    translator = Translator()
+    sentence = translator.translate(text).text
     sid_obj = SentimentIntensityAnalyzer()
-
     sentiment_dict = sid_obj.polarity_scores(sentence)
-    return sentiment_dict['compound'] #neg, neu, pos
+    return sentiment_dict['compound'] 
 
-def clean_tweet_v(tweet):
+def clean_tweet(tweet):
     if type(tweet) == float:#np.float:
         return ""
     temp = tweet.lower()
@@ -38,28 +39,13 @@ def clean_tweet_v(tweet):
     temp = re.sub("[^a-z0-9]"," ", temp)
     return temp
 
-def sentiment_vader(row, location):
-    text = row[location]
-    print(text)
-    translator= Translator(from_lang="spanish",to_lang="english")
-    try:
-        sentence = translator.translate(text)
-    except: 
-        print(f'Invalid translation: {text}')
-        return 0
+def twitter_sentiment_csv(df_tweets):
+    df_test = df_tweets.copy()
+    df_test['clean'] = np.vectorize(clean_tweet)(df_test['text'])
+    df_test['score'] = np.vectorize(sentiment_vader)(df_test['clean'])
+    save_df_local(df=df_test, output_name='twitter_processed.csv', create_folder=True, new_folder_path= 'data')
+    return df_test
 
-    # Create a SentimentIntensityAnalyzer object.
-    sid_obj = SentimentIntensityAnalyzer()
-
-    sentiment_dict = sid_obj.polarity_scores(sentence)
-    print('sesent',sentiment_dict['compound'])
-    return sentiment_dict['compound'] #neg, neu, pos
-
-def apply_vader(df, name_col = 0):
-    df['clean'] = df.apply(lambda row: clean_tweet(row, name_col),axis=1)
-    df['sentiment'] = df.apply(lambda row: sentiment_vader(row, 'clean'),axis=1)
-    return df
-
-if __name__ == "__main__":
-    df = pd.DataFrame(['hola', 'bueno', 'malo', 'me encanta', "@master en https://magic.com #marvella", 'jajajaja', 'enfin', 'hooolaa'], columns=['tweet'])
-    print(apply_vader(df))
+if __name__ == '__main__':
+    pass 
+    #twitter_sentiment_csv(df)

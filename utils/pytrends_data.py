@@ -21,7 +21,7 @@ def historical_pytrends(start = (datetime.now() - timedelta(days=265)).strftime(
     return data#data.iloc[1:] --> treu 1a columna que no hi ha el % de millora
 
 def get_all_pytrends(start = (datetime.now() - timedelta(days=265)).strftime("%Y-%m-%d"), 
-                        end = datetime.now().strftime("%Y-%m-%d"), total_days=2000):
+                        end = datetime.now().strftime("%Y-%m-%d"), total_days=3000):
     keys = [["Ibex 35"],
           ["ibex 35 down"],
           ["credito"],
