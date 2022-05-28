@@ -4,6 +4,41 @@ import os
 import pandas as pd
 import numpy as np 
 
+def get_path(filename: str = 'train.csv') -> tuple[bool, str]:
+    curr_path = str(os.getcwd())
+    path_data = curr_path + '/data/' + filename
+    file_extension = path_data.split(".")[-1]
+    return path_data, file_extension
+
+def get_dataframe(path_data: str, file_extension: str) -> pd.DataFrame:
+    if file_extension == 'xlsx':
+        df = pd.read_excel(path_data, engine='openpyxl')
+    elif file_extension == 'xls':
+        df = pd.read_excel(path_data)
+    elif file_extension == 'csv':
+        df = pd.read_csv(path_data)
+    return df 
+
+def read_json(train_data_api):
+    with open(train_data_api) as file:
+        links = [link.strip() for link in file]
+
+    int_cols = ['MONTH','reportingYear', 'DAY', 'max_wind_speed', 'avg_wind_speed', 'min_wind_speed', 'max_temp', 'min_temp', 'avg_temp', 'DAY WITH FOGS']
+    df_json = pd.DataFrame()
+    for link in links:
+        data_json = r.get(link).json()
+        tmp_df = pd.json_normalize(data_json)
+        #set index
+        tmp_df.set_index(tmp_df[''], inplace = True)
+        tmp_df.drop('', axis = 1, inplace=True)
+        #values to int
+        tmp_df[int_cols] = tmp_df[int_cols].apply(pd.to_numeric)
+        #print(tmp_df.columns)
+        #concat
+        df_json = pd.concat([df_json, tmp_df])
+        #train_csv = pd.concat([train_csv, tmp_df])
+    return df_json
+
 def save_df_local(df: pd.DataFrame, output_name: str='results.csv', create_folder: bool=False, new_folder_path:str = '../../data/scraper', compressed: bool=False ):
     if create_folder:
         os.makedirs(new_folder_path, exist_ok=True) #'folder/subfolder'
