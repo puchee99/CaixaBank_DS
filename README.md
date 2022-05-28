@@ -46,9 +46,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
       <li><a href="#built-with">Built With</a></li>
-      <li><a href="#eda">EDA</a></li>
       <li><a href="#model">Model</a></li>
-      <li><a href="#results">Results</a></li>
       </ul>
     </li>
     <li>
@@ -81,16 +79,6 @@ The challenge will consist of modeling a predictive algorithm that allows knowin
 * [Seaborn](https://seaborn.pydata.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-## EDA
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Results
-
-
 
 
 <!-- GETTING STARTED -->
@@ -130,25 +118,6 @@ We will create a virtual environment with `python3`
 
 The `main.ipynb` document contains all the steps to get to the solution.
 This uses functions from the personal `utils` library.
-
-The `train.py` and `test.py` documents can be executed with bash using different arguments.
-
-* To get the information of the arguments use:
-    ```sh
-    python name_document.py -h
-    ```
-    Example:
-    ```sh
-    python train.py -h
-    ```
-* To train the models use:
-    ```sh
-    python train.py
-    ```
-* To test the models use:
-    ```sh
-    python test.py
-    ```
 
 <!-- CONTACT -->
 ## Contact
